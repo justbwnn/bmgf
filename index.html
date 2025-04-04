@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bml:^</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrap">
+    <section class="text" id="text">
+        <div class="top-wrapper">
+            <div class="text">
+                <h1 id="question">Will you be my<span> girlfriend?</span></h1>
+                <p id="xtra"> </p>
+            </div>
+            <section>
+                <button id="btnYes" type="button" class="btn-yes" onclick="doSomethingyes()">YES!</button>
+                <button id="btnNo" type="button" class="btn-no" onclick="doSomethingno()"><spanNo1>no.</spanNo1></button>
+                <div class="main-gif">
+                    <img id="windah" src="src/windahalafyu.gif">
+                </div>
+            </section>    
+        </div>
+        <div class="bottom-wrapper">
+            <div class="text">
+                <h1 id="yippee"> </h1>
+            </div>
+            <div class="bottom-gif">
+                <img id="tppng" src="src/tppng.png">
+            </div>
+        </div>
+    </section>
+    </div>
+
+    <script>
+        const buttonYes = document.getElementById('btnYes');
+        const buttonNo = document.getElementById('btnNo');
+        var display = 0;
+        var m = 0;
+
+        function doSomethingyes() {
+            document.getElementById("question").innerHTML = "<spanYippee> YIPPEEEEEEEE!";
+            document.getElementById("xtra").innerHTML = "Now you're officially my girlfriend!";
+            document.getElementById("windah").src="src/robloxahhdog.gif"  
+            document.getElementById("yippee").innerHTML = "Te amo, <span> My Love</span>."
+            document.getElementById("tppng").src="src/lvu.gif"
+
+            if(display == 1) {
+                buttonYes.style.display = 'block';
+                display = 0;
+        }
+            else {
+                buttonYes.style.display = 'none';
+                buttonNo.style.display = 'none';
+                display = 1;
+        }
+        }
+
+        var count = 0;
+        function doSomethingno() {
+            count = count + 1;
+            if(count == 1) {
+                document.getElementById("xtra").innerHTML = "Please?";
+                document.getElementById("btnYes").innerHTML = "<span1> okay<3";
+                document.getElementById("btnNo").innerHTML = "<spanNo1> no.";
+                document.getElementById("windah").src="src/spongebob.gif"
+            }
+
+            else if(count == 2) {
+                document.getElementById("xtra").innerHTML = "Pleaseeeeee?";
+                document.getElementById("btnYes").innerHTML = "<span2> mhm!<3";
+                document.getElementById("btnNo").innerHTML = "<spanNo1> i'm sorry but.. no.";
+                document.getElementById("windah").src="src/spongebeg.gif"
+            }
+
+            else if(count == 3) {
+                document.getElementById("xtra").innerHTML = "C'mon! Think about it!";
+                document.getElementById("btnYes").innerHTML = "<span3> okay!<3";
+                document.getElementById("btnNo").innerHTML = "<spanNo1>nah bro";
+                document.getElementById("windah").src="src/giphy.gif"
+            }
+
+            else if(count == 4) {
+                document.getElementById("xtra").innerHTML = "Just imagine how happy we'll be!";
+                document.getElementById("btnYes").innerHTML = "<span4> okay then:3";
+                document.getElementById("btnNo").innerHTML = "<spanNo1> nawh";
+                document.getElementById("windah").src="src/pleading.gif";
+            }
+
+            else if(count == 5) {
+                document.getElementById("xtra").innerHTML = "Ah.. c'mon!";
+                document.getElementById("btnYes").innerHTML = "<span5> alright<3";
+                document.getElementById("btnNo").innerHTML = "<spanNo2> no";
+                document.getElementById("windah").src="src/pleading-creepy.gif";
+            }
+
+            else if(count == 6) {
+                document.getElementById("xtra").innerHTML = "I'll be sad...";
+                document.getElementById("btnYes").innerHTML = "<span6> okayy my love!<3";
+                document.getElementById("btnNo").innerHTML = "<spanNo3> no.";
+                document.getElementById("windah").src="src/cry.gif";
+            }
+
+            else if(count == 7) {
+                document.getElementById("xtra").innerHTML = "I'll be very sad...";
+                document.getElementById("btnYes").innerHTML = "<span7> okayy my love!<3";
+                document.getElementById("btnNo").innerHTML = "<spanNo4> nuh uh";
+                document.getElementById("windah").src="src/cry.gif";
+            }
+            
+            else if(count == 8) {
+                document.getElementById("xtra").innerHTML = "I'll be very very sad...";
+                document.getElementById("btnYes").innerHTML = "<span8> okayy my love!<3";
+                document.getElementById("btnNo").innerHTML = "<spanNo5> nah bro";
+                document.getElementById("windah").src="src/cry.gif";
+            }
+
+            else if(count == 9) {
+                document.getElementById("xtra").innerHTML = "I'll be very very very sad...";
+                document.getElementById("btnYes").innerHTML = "<span9> okayyy honey!<<3";
+                document.getElementById("btnNo").innerHTML = "<spanNo6>no.";
+                document.getElementById("windah").src="src/cry.gif";
+            }
+
+            else if(count >= 9) {
+                const wrapper = document.querySelector('.top-wrapper');
+                const noBtn = document.querySelector('.btn-no');
+                noBtn.classList.add('kabur')
+                noBtn.classList.remove('btn-no')
+
+
+                const wrapperRect = wrapper.getBoundingClientRect();
+                const noBtnRect = noBtn.getBoundingClientRect();
+
+                noBtn.addEventListener('mouseover', () => {
+                    const i = Math.floor(Math.random() * (wrapperRect.width - noBtnRect.width)) + 1;
+                    const j = Math.floor(Math.random() * (wrapperRect.height - noBtnRect.height)) + 1;
+                    noBtn.style.left = i + 'px';
+                    noBtn.style.top = j + 'px';
+                });
+            
+                noBtn.addEventListener('click', () => {
+                    const i = Math.floor(Math.random() * (wrapperRect.width - noBtnRect.width)) + 1;
+                    const j = Math.floor(Math.random() * (wrapperRect.height - noBtnRect.height)) + 1;
+                    noBtn.style.left = i + 'px';
+                    noBtn.style.top = j + 'px';
+                });
+            }
+        }
+    </script>
+</body>
+</html>
